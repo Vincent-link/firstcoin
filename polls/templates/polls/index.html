@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Vizew - Blog &amp; Magazine HTML Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Top Header Area -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <!-- Breaking News Widget -->
+                        <div class="breaking-news-area d-flex align-items-center">
+                            <div class="news-title">
+                                <p>劲爆新闻:</p>
+                            </div>
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    <li><a href="single-post.html">比特币站稳5200美元</a></li>
+                                    <li><a href="single-post.html">币圈下一个风口，给以太坊持有者打了一针强心剂</a></li>
+                                    <li><a href="single-post.html">V神：以太坊Staking经济产业规模将达1.6亿美元</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="top-meta-data d-flex align-items-center justify-content-end">
+                            <!-- Top Social Info -->
+                            <!-- <div class="top-social-info">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            </div> -->
+                            <!-- Top Search Area -->
+                            <!-- <div class="top-search-area">
+                                <form action="index.html" method="post">
+                                    <input type="search" name="top-search" id="topSearch" placeholder="Search...">
+                                    <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </form>
+                            </div> -->
+                            <!-- Login -->
+                            <a href="login.html" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="vizew-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="vizewNav">
+
+                        <!-- Nav brand -->
+                        <a href="index.html" class="nav-brand">
+                          币圈头条
+                          <!-- <img src="img/core-img/logo.png" alt=""> -->
+                        </a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <div class="classy-menu">
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li class="active"><a href="index.html">推荐</a></li>
+                                    <li><a href="archive-list.html">热点</a></li>
+                                    <li><a href="contact.html">比特币</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Vizew Post Area Start ##### -->
+    <section class="vizew-post-area mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-7 col-lg-8">
+                    <div class="all-posts-area">
+                        <!-- Section Heading -->
+                        <br>
+                        <!-- <div class="section-heading style-2">
+
+                            <div class="line"></div>
+                        </div> -->
+
+                        <!-- Single Post Area -->
+                        <div class="single-post-area mb-30">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-lg-6">
+                                    <!-- Post Thumbnail -->
+                                    <div class="post-thumbnail">
+                                        <img src="img/bg-img/21.jpg" alt="">
+
+                                        <!-- Video Duration -->
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <!-- Post Content -->
+                                    <div class="post-content mt-0">
+                                        <a href="#" class="post-cata cata-sm cata-success">比特币</a>
+                                        <a href="single-post.html" class="post-title mb-2">比特币稳住5300美金，是反转的契机吗？</a>
+                                        <div class="post-meta d-flex align-items-center mb-2">
+                                            <a href="#" class="post-author">By 巴比特</a>
+                                            <i class="fa fa-circle" aria-hidden="true"></i>
+                                            <a href="#" class="post-date">2019.05.01</a>
+                                        </div>
+                                        <div class="post-meta d-flex">
+                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>
+                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
+                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single Post Area -->
+                        <div class="single-post-area mb-30">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-lg-6">
+                                    <!-- Post Thumbnail -->
+                                    <div class="post-thumbnail">
+                                        <img src="img/bg-img/22.jpg" alt="">
+
+                                        <!-- Video Duration -->
+                                        <span class="video-duration">05.03</span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <!-- Post Content -->
+                                    <div class="post-content mt-0">
+                                        <a href="#" class="post-cata cata-sm cata-danger">Game</a>
+                                        <a href="single-post.html" class="post-title mb-2">Thailand cave rescue: Boys 'doing well' after spending night</a>
+                                        <div class="post-meta d-flex align-items-center mb-2">
+                                            <a href="#" class="post-author">By Jane</a>
+                                            <i class="fa fa-circle" aria-hidden="true"></i>
+                                            <a href="#" class="post-date">Sep 08, 2018</a>
+                                        </div>
+                                        <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id tristique sit amet, rutrum non ligula.</p>
+                                        <div class="post-meta d-flex">
+                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>
+                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
+                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single Post Area -->
+                        <div class="single-post-area mb-30">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-lg-6">
+                                    <!-- Post Thumbnail -->
+                                    <div class="post-thumbnail">
+                                        <img src="img/bg-img/23.jpg" alt="">
+
+                                        <!-- Video Duration -->
+                                        <span class="video-duration">05.03</span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <!-- Post Content -->
+                                    <div class="post-content mt-0">
+                                        <a href="#" class="post-cata cata-sm cata-primary">Business</a>
+                                        <a href="single-post.html" class="post-title mb-2">Theresa May battles Brexiteer backlash amid disquiet</a>
+                                        <div class="post-meta d-flex align-items-center mb-2">
+                                            <a href="#" class="post-author">By Jane</a>
+                                            <i class="fa fa-circle" aria-hidden="true"></i>
+                                            <a href="#" class="post-date">Sep 08, 2018</a>
+                                        </div>
+                                        <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id tristique sit amet, rutrum non ligula.</p>
+                                        <div class="post-meta d-flex">
+                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>
+                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
+                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single Post Area -->
+                        <div class="single-post-area mb-30">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-lg-6">
+                                    <!-- Post Thumbnail -->
+                                    <div class="post-thumbnail">
+                                        <img src="img/bg-img/24.jpg" alt="">
+
+                                        <!-- Video Duration -->
+                                        <span class="video-duration">05.03</span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <!-- Post Content -->
+                                    <div class="post-content mt-0">
+                                        <a href="#" class="post-cata cata-sm cata-danger">Game</a>
+                                        <a href="single-post.html" class="post-title mb-2">Theresa May warned Brexit strategy 'risks putting Jeremy Corbyn</a>
+                                        <div class="post-meta d-flex align-items-center mb-2">
+                                            <a href="#" class="post-author">By Jane</a>
+                                            <i class="fa fa-circle" aria-hidden="true"></i>
+                                            <a href="#" class="post-date">Sep 08, 2018</a>
+                                        </div>
+                                        <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id tristique sit amet, rutrum non ligula.</p>
+                                        <div class="post-meta d-flex">
+                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>
+                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
+                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5 col-lg-4">
+                    <div class="sidebar-area">
+                        <!-- ***** Single Widget ***** -->
+                        <div class="single-widget latest-video-widget mb-50">
+                            <!-- Section Heading -->
+                            <div class="section-heading style-2 mb-30">
+                                <h4>最新文章</h4>
+                                <div class="line"></div>
+                            </div>
+
+                            <!-- Single Blog Post -->
+                            <div class="single-post-area mb-30">
+                                <!-- Post Thumbnail -->
+                                <div class="post-thumbnail">
+                                    <img src="img/bg-img/13.jpg" alt="">
+                                    <!-- Video Duration -->
+                                </div>
+                                <!-- Post Content -->
+                                <div class="post-content">
+                                    <a href="#" class="post-cata cata-sm cata-success">比特币</a>
+                                    <a href="single-post.html" class="post-title">比特币稳住5300美金，是反转的契机吗？</a>
+                                    <!-- <div class="post-meta d-flex">
+                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
+                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- ***** Single Widget ***** -->
+                        <div class="single-widget mb-50">
+                            <!-- Section Heading -->
+                            <div class="section-heading style-2 mb-30">
+                                <h4>最热文章</h4>
+                                <div class="line"></div>
+                            </div>
+
+
+                            <!-- Single Blog Post -->
+                            <div class="single-blog-post d-flex">
+                                <div class="post-thumbnail">
+                                    <img src="img/bg-img/38.jpg" alt="">
+                                </div>
+                                <div class="post-content">
+                                    <a href="single-post.html" class="post-title">比特币稳住5300美金，是反转的契机吗？</a>
+                                    <!-- <div class="post-meta d-flex justify-content-between">
+                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
+                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Vizew Psot Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+
+        <!-- Copywrite Area -->
+        <div class="copywrite-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Copywrite Text -->
+                    <div class="col-12 col-sm-6">
+                        <p class="copywrite-text">
+                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">币圈头条</a>
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <nav class="footer-nav">
+                            <ul>
+                                <!-- <li><a href="#">广告投放</a></li>
+                                <li><a href="#">媒体合作</a></li> -->
+                                <li><a href="#">关于我们</a></li>
+                                <!-- <li><a href="#">联系我们</a></li> -->
+                                <!-- <li><a href="#">Disclaimer</a></li>
+                                <li><a href="#">Privacy</a></li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'polls/js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'polls/js/bootstrap/popper.min.js' %}"></script>
+
+    <script src="{% static 'polls/js/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'polls/js/plugins/plugins.js' %}"></script>
+    <script src="{% static 'polls/js/active.js' %}"></script>
+</body>
+
+</html>

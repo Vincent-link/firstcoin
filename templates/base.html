@@ -1,0 +1,79 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'news/style.css' %}">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    {% include 'head.html' %}
+
+
+    {% block content %}{% endblock %}
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+
+        <!-- Copywrite Area -->
+        <div class="copywrite-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Copywrite Text -->
+                    <div class="col-12 col-sm-6">
+                        <p class="copywrite-text">
+                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">币圈头条</a>
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <nav class="footer-nav">
+                            <ul>
+                                <!-- <li><a href="#">广告投放</a></li>
+                                <li><a href="#">媒体合作</a></li> -->
+                                <li><a href="#">关于我们</a></li>
+                                <!-- <li><a href="#">联系我们</a></li> -->
+                                <!-- <li><a href="#">Disclaimer</a></li>
+                                <li><a href="#">Privacy</a></li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'news/js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'news/js/bootstrap/popper.min.js' %}"></script>
+
+    <script src="{% static 'news/js/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'news/js/plugins/plugins.js' %}"></script>
+    <script src="{% static 'news/js/active.js' %}"></script>
+</body>
+
+</html>

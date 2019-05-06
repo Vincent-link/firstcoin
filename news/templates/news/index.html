@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{request.user}}
+{% if articles %}
+    <ul>
+    {% for article in articles %}
+    <li><a href="{% url 'news:detail' article.id %}">{{ article.headline }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No articles are available.</p>
+{% endif %}
+
+{% endblock %}

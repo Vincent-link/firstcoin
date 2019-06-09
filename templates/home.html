@@ -3,11 +3,10 @@
 
 {% block title %}Home{% endblock %}
 
-
 {% block content %}
 
 <!-- ##### Vizew Post Area Start ##### -->
-<section class="vizew-post-area mb-50">
+<section class="vizew-post-area mb-50" style="min-height:870px;">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-7 col-lg-8">
@@ -28,24 +27,24 @@
                             <div class="col-12 col-lg-6">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img src="img/bg-img/21.jpg" alt="">
+                                    <img src="{{ MEDIA_URL }}{{ article.cover }}" alt="">
                                     <!-- Video Duration -->
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <!-- Post Content -->
                                 <div class="post-content mt-0">
-                                    <a href="{% url 'news:detail' article.id %}" class="post-cata cata-sm cata-success">比特币</a>
+                                    <!-- <a href="#" class="post-cata cata-sm cata-success">比特币</a> -->
                                     <a href="{% url 'news:detail' article.id %}" class="post-title mb-2">{{ article.headline }}</a>
                                     <div class="post-meta d-flex align-items-center mb-2">
                                         <a href="#" class="post-author">By {{ article.reporter }}</a>
                                         <i class="fa fa-circle" aria-hidden="true"></i>
-                                        <a href="#" class="post-date">{{ article.pub_date }}</a>
+                                        <a class="post-date">{{ article.pub_date }}</a>
                                     </div>
                                     <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>
+                                        <!-- <a ><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a> -->
+                                        <a ><i class="fa fa-eye" aria-hidden="true"></i> {{ article.pageviews }}</a>
+                                        <!-- <a ><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -60,51 +59,48 @@
             </div>
 
             <div class="col-12 col-md-5 col-lg-4">
+              <br>
+
                 <div class="sidebar-area">
-                    <!-- ***** Single Widget ***** -->
-                    <div class="single-widget latest-video-widget mb-50">
-                        <!-- Section Heading -->
+                    <!-- 最新文章 -->
+                    <!-- <div class="single-widget latest-video-widget mb-50">
                         <div class="section-heading style-2 mb-30">
                             <h4>最新文章</h4>
                             <div class="line"></div>
                         </div>
 
-                        <!-- Single Blog Post -->
                         <div class="single-post-area mb-30">
-                            <!-- Post Thumbnail -->
                             <div class="post-thumbnail">
                                 <img src="img/bg-img/13.jpg" alt="">
-                                <!-- Video Duration -->
                             </div>
-                            <!-- Post Content -->
                             <div class="post-content">
                                 <a href="#" class="post-cata cata-sm cata-success">比特币</a>
                                 <a href="single-post.html" class="post-title">比特币稳住5300美金，是反转的契机吗？</a>
-                                <!-- <div class="post-meta d-flex">
+                                <div class="post-meta d-flex">
                                     <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
                                     <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
                                     <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
 
-                    </div>
+                    </div> -->
                     <!-- ***** Single Widget ***** -->
                     <div class="single-widget mb-50">
                         <!-- Section Heading -->
                         <div class="section-heading style-2 mb-30">
-                            <h4>最热文章</h4>
+                            <h4>热门文章</h4>
                             <div class="line"></div>
                         </div>
 
-
-                        <!-- Single Blog Post -->
+                        {% if top10_articles %}
+                          {% for article in top10_articles %}
                         <div class="single-blog-post d-flex">
                             <div class="post-thumbnail">
-                                <img src="img/bg-img/38.jpg" alt="">
+                              <img src="{{ MEDIA_URL }}{{ article.cover }}" alt="">
                             </div>
                             <div class="post-content">
-                                <a href="single-post.html" class="post-title">比特币稳住5300美金，是反转的契机吗？</a>
+                              <a href="{% url 'news:detail' article.id %}" class="post-title">{{ article.headline }}</a>
                                 <!-- <div class="post-meta d-flex justify-content-between">
                                     <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
                                     <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
@@ -112,6 +108,10 @@
                                 </div> -->
                             </div>
                         </div>
+                        {% endfor %}
+                        {% else %}
+                          <p>No articles are available.</p>
+                        {% endif %}
                     </div>
 
                 </div>

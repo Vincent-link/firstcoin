@@ -3,10 +3,112 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-  </form>
+
+<!-- ##### Login Area Start ##### -->
+<div class="vizew-login-area section-padding-80" style="min-height:490px">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="login-content">
+                    <!-- Section Title -->
+                    <div class="section-heading">
+                        <h4>手机号登录</h4>
+                        <div class="line"></div>
+                    </div>
+
+                    <form action="index.html" method="post">
+                        <!-- <div class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email or User Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password2" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox mr-sm-2">
+                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                <label class="custom-control-label" for="customControlAutosizing">勾选小框，方便下次登录</label>
+                            </div>
+                        </div> -->
+                        <div class="form_group">
+                             <input type="text" placeholder="11位数的手机号码" id="mobile" name="mobile" class="form-control"/>
+                        </div>
+                        <div class="form_group">
+                            <div class="" style="float:left">
+                              <input type="text" name="code" placeholder="请输入手机验证码" style="width: 240px;" class="form-control">
+                            </div>
+                            <div class="" style="float:left; line-height:50px; cursor:pointer">
+                              <span id="zphone" style="width: 100px;margin-left: 10px;">获取验证码</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn vizew-btn w-100 mt-30">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Login Area End ##### -->
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+        {% block jquery %}
+        $('#zphone').click(
+              function(){
+              //发送验证码
+              $.get('/accounts/send_message', {mobile:$('#mobile').val()}, function(msg) {
+                  alert(jQuery.trim(msg.msg));
+                  if(msg.msg=='提交成功'){
+                      RemainTime();
+                  }
+              });
+          })
+
+          //按钮倒计时
+          var iTime = 60;
+          sTime = ''
+          function RemainTime(){
+              if (iTime == 0) {
+                  document.getElementById('zphone').disabled = false;
+                  sTime="获取验证码";
+                  iTime = 60;
+                  document.getElementById('zphone').value = sTime;
+                  return;
+              }else{
+                  document.getElementById('zphone').disabled = true;
+                  sTime="重新发送(" + iTime + ")";
+                  iTime--;
+              }
+              setTimeout(function() { RemainTime() },1000)
+              document.getElementById('zphone').value = sTime;
+          }
+
+          // 检查用户输入的手机号是否合法
+          function check_mobile() {
+
+              var re = /^1[345678]\d{9}$/; //校验手机号
+
+              if(re.test($('#mobile').val()))
+              {
+                  $('#mobile').next().hide();
+                  error_mobile = false;
+                  document.getElementById('zphone').disabled = false;
+              }
+              else
+              {
+                  $('#mobile').next().html('你输入的手机格式不正确')
+                  $('#mobile').next().show();
+                  error_mobile = true;
+                  document.getElementById('zphone').disabled = true;
+              }
+          }
+        {% endblock %}
+      })
+
+</script>
 {% endblock %}

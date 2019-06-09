@@ -9,13 +9,14 @@
     <section class="post-details-area mb-80">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <!-- <div class="col-12">
                     <div class="post-details-thumb mb-50">
                         <img src="img/bg-img/34.jpg" alt="">
                     </div>
-                </div>
+                </div> -->
             </div>
 
+            <br>
             <div class="row justify-content-center">
                 <!-- Post Details Content Area -->
                 <div class="col-12 col-lg-8 col-xl-7">
@@ -25,8 +26,8 @@
 
                             <!-- Post Content -->
                             <div class="post-content mt-0">
-                                <a href="#" class="post-cata cata-sm cata-danger">Game</a>
-                                  {{ article.title }}
+                                <!-- <a href="#" class="post-cata cata-sm cata-danger">Game</a> -->
+                                  <a class="post-title mb-2">{{ article.headline }}</a>
                                 <div class="d-flex justify-content-between mb-30">
                                     <div class="post-meta d-flex align-items-center">
                                         <a href="#" class="post-author">By {{ article.reporter }}</a>
@@ -35,33 +36,32 @@
                                     </div>
                                     <div class="post-meta d-flex">
                                         <!-- <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a> -->
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{article.views}}</a>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{article.pageviews}}</a>
                                         <!-- <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a> -->
                                     </div>
                                 </div>
                             </div>
 
-                            <p>{{ article.content }}</p>
+                            <p>{{ article.content|safe }}</p>
 
                             <!-- Post Tags -->
-                            <div class="post-tags mt-30">
+                            <!-- <div class="post-tags mt-30">
                                 <ul>
                                     <li><a href="#">HealthFood</a></li>
                                     <li><a href="#">Sport</a></li>
                                     <li><a href="#">Game</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
 
 
                             <!-- Related Post Area -->
-                            <div class="related-post-area mt-5">
-                                <!-- Section Title -->
-                                <!-- <div class="section-heading style-2">
+                            <!-- <div class="related-post-area mt-5">
+                                <div class="section-heading style-2">
                                     <h4>推荐文章</h4>
                                     <div class="line"></div>
-                                </div> -->
+                                </div>
 
-                                <!-- <div class="row">
+                                <div class="row">
                                     <div class="col-12 col-md-6">
                                         <div class="single-post-area mb-50">
                                             <div class="post-thumbnail">
@@ -79,8 +79,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div> -->
-                            </div>
+                                </div>
+                            </div> -->
 
                             <!-- Comment Area Start -->
                             <!-- <div class="comment_area clearfix mb-50">
@@ -147,16 +147,13 @@
                             </div> -->
 
                             <!-- Post A Comment Area -->
-                            <div class="post-a-comment-area">
-
-                                <!-- Section Title -->
-                                <!-- <div class="section-heading style-2">
+                            <!-- <div class="post-a-comment-area">
+                                <div class="section-heading style-2">
                                     <h4>留言</h4>
                                     <div class="line"></div>
-                                </div> -->
+                                </div>
 
-                                <!-- Reply Form -->
-                                <!-- <div class="contact-form-area">
+                                <div class="contact-form-area">
                                     <form action="#" method="post">
                                         <div class="row">
                                             <div class="col-12 col-lg-6">
@@ -175,45 +172,43 @@
                                     </form>
                                 </div>
                             </div> -->
-                            </div>
 
                         </div>
                     </div>
                 </div>
 
-                <!-- Sidebar Widget -->
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                     <div class="sidebar-area">
-
-                        <!-- ***** Single Widget ***** -->
+<!--
                         <div class="single-widget share-post-widget mb-50">
-                            <p>Share This Post</p>
+                            <p>分享</p>
                             <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
                             <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
                             <a href="#" class="google"><i class="fa fa-google" aria-hidden="true"></i> Google+</a>
-                        </div>
+                        </div> -->
 
-                        <!-- ***** Single Widget ***** -->
                         <div class="single-widget p-0 author-widget">
                             <div class="p-4">
-                                <img class="author-avatar" src="img/bg-img/30.jpg" alt="">
+                                <img class="author-avatar" src="{{ MEDIA_URL }}{{ article.reporter.avatar }}" alt="{{ article.reporter }}">
+
                                 <a href="#" class="author-name">{{ article.reporter }}</a>
                                 <div class="author-social-info">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-pinterest"></i></a>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+                                <p>{{ article.reporter.intro }}</p>
                             </div>
 
-                            <div class="authors--meta-data d-flex">
+                            <!-- <div class="authors--meta-data d-flex">
                                 <p>Posted<span class="counter">80</span></p>
                                 <p>Comments<span class="counter">230</span></p>
-                            </div>
+                            </div> -->
                         </div>
 
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

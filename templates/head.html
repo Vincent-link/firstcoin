@@ -7,14 +7,17 @@
                 <div class="col-12 col-md-6">
                     <!-- Breaking News Widget -->
                     <div class="breaking-news-area d-flex align-items-center">
-                        <div class="news-title">
-                            <p>劲爆新闻:</p>
+                        <div class="news-title" style="min-width: 45px;">
+                            <p>Top3:</p>
                         </div>
-                        <div id="breakingNewsTicker" class="ticker">
+                        <div id="breakingNewsTicker" class="ticker" style="padding-left:0px">
                             <ul>
-                                <li><a href="single-post.html">比特币站稳5200美元</a></li>
-                                <li><a href="single-post.html">币圈下一个风口，给以太坊持有者打了一针强心剂</a></li>
-                                <li><a href="single-post.html">V神：以太坊Staking经济产业规模将达1.6亿美元</a></li>
+                              {% block content %}
+                              {% for article in top3_articles %}
+                              <li><a href="{% url 'news:detail' article.id %}">{{ article.headline }}</a></li>
+                              {% endfor %}
+                              {% endblock %}
+
                             </ul>
                         </div>
                     </div>
@@ -56,10 +59,8 @@
 
                 <!-- Menu -->
                 <nav class="classy-navbar justify-content-between" id="vizewNav">
-
-                    <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand">
-                      币圈头条
+                    <a href="/" class="logo" style="color: #ffffff;font-size: 20px;">
+                      币市头条
                       <!-- <img src="img/core-img/logo.png" alt=""> -->
                     </a>
 
@@ -78,8 +79,8 @@
                         <div class="classynav">
                             <ul>
                                 <li class="active"><a href="index.html">推荐</a></li>
-                                <li><a href="archive-list.html">热点</a></li>
-                                <li><a href="contact.html">比特币</a></li>
+                                <!-- <li><a href="archive-list.html">热点</a></li>
+                                <li><a href="contact.html">比特币</a></li> -->
                             </ul>
                         </div>
                         <!-- Nav End -->

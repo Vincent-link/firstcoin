@@ -19,6 +19,11 @@ from django.views.generic.base import TemplateView # new
 
 from news.views import index
 
+from django.views.static import serve
+from mysite.settings import MEDIA_ROOT
+from django.conf.urls import url
+
+
 
 urlpatterns = [
     path('news/', include('news.urls')),
@@ -28,7 +33,10 @@ urlpatterns = [
 
     path('accounts/', include('django.contrib.auth.urls')), # new
     #path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('', index, name='home'),
+    path('about', index, name='about'),
 
-    path('', index, name='home')
+    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ]

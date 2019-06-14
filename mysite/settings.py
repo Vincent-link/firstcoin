@@ -84,7 +84,7 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'firstcoin',
+        'NAME': 'firstcoin$firstcoin',
         'USER':'firstcoin',
         'PASSWORD':'bl199109',
         'HOST':'firstcoin.mysql.pythonanywhere-services.com',

@@ -143,3 +143,6 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'  # 上传图片保存路径，如果没有图�
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+ALLOWED_HOSTS = ['firstcoin.pythonanywhere.com']
+

@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'firstcoin',
         'USER':'firstcoin',
-        'PASSWORD':'123456',
+        'PASSWORD':'bl199109',
         'HOST':'firstcoin.mysql.pythonanywhere-services.com',
         'PORT':3306,
     }
@@ -152,4 +152,3 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 ALLOWED_HOSTS = ['firstcoin.pythonanywhere.com']
-

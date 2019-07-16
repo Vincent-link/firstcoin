@@ -6,7 +6,7 @@
 {% block content %}
 
     <!-- ##### Post Details Area Start ##### -->
-    <section class="post-details-area mb-80">
+    <section class="post-details-area mb-15" style="margin-bottom: 20px">
         <div class="container">
             <div class="row">
                 <!-- <div class="col-12">
@@ -44,6 +44,9 @@
 
                             <p>{{ article.content|safe }}</p>
 
+                            <div class="mt-30">
+                                本文来自{{article.reporter}}
+                            </div>
                             <!-- Post Tags -->
                             <!-- <div class="post-tags mt-30">
                                 <ul>
@@ -55,32 +58,39 @@
 
 
                             <!-- Related Post Area -->
-                            <!-- <div class="related-post-area mt-5">
+                            <div class="related-post-area mt-5">
                                 <div class="section-heading style-2">
                                     <h4>推荐文章</h4>
                                     <div class="line"></div>
                                 </div>
 
                                 <div class="row">
+                                  {% if recommend_articles %}
+                                    {% for article in recommend_articles %}
                                     <div class="col-12 col-md-6">
                                         <div class="single-post-area mb-50">
                                             <div class="post-thumbnail">
-                                                <img src="img/bg-img/11.jpg" alt="">
+                                              <img src="{{ MEDIA_URL }}{{ article.cover }}" alt="">
                                             </div>
 
                                             <div class="post-content">
-                                                <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                                <a href="single-post.html" class="post-title">Warner Bros. Developing ‘The accountant’ Sequel</a>
+                                                <!-- <a href="#" class="post-cata cata-sm cata-success">Sports</a> -->
+                                                <a href="{% url 'news:detail' article.id %}" class="post-title">{{ article.headline }}</a>
                                                 <div class="post-meta d-flex">
-                                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a>
-                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 16</a>
-                                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15</a>
+                                                    <!-- <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a> -->
+                                                    <a ><i class="fa fa-eye" aria-hidden="true"></i> {{ article.pageviews }}</a>
+                                                    <!-- <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15</a> -->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    {% endfor %}
+                                  {% else %}
+                                    <p>No articles are available.</p>
+                                  {% endif %}
+
                                 </div>
-                            </div> -->
+                            </div>
 
                             <!-- Comment Area Start -->
                             <!-- <div class="comment_area clearfix mb-50">

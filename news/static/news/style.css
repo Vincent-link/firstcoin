@@ -9,6 +9,11 @@
 @import url(css/owl.carousel.min.css);
 @import url(css/animate.css);
 @import url(css/magnific-popup.css);
+
+.post-thumbnail img {
+  width: !380px;
+}
+
 * {
   margin: 0;
   padding: 0; }

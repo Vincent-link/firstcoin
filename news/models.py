@@ -13,7 +13,7 @@ class Reporter(models.Model):
 class Article(models.Model):
     pub_date = models.DateField()
     headline = models.CharField(max_length=200)
-    cover = models.ImageField(upload_to = "articles/covers/%Y%m", verbose_name="上传图片", default='')
+    cover = models.ImageField(upload_to = "articles/covers/%Y%m", verbose_name="上传图片", default='', max_length=500)
     content = RichTextUploadingField(default='', verbose_name='详细介绍')
     pageviews = models.IntegerField(verbose_name='页面浏览量')
 

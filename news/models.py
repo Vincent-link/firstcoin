@@ -15,9 +15,11 @@ class Article(models.Model):
     headline = models.CharField(max_length=200)
     cover = models.ImageField(upload_to = "articles/covers/%Y%m", verbose_name="上传图片", default='', max_length=500)
     content = RichTextUploadingField(default='', verbose_name='详细介绍')
-    pageviews = models.IntegerField(verbose_name='页面浏览量')
 
+    pageviews = models.IntegerField(verbose_name='页面浏览量')
+    real_pageviews = models.IntegerField(verbose_name='实际页面浏览量')
     reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)
+    is_publish = models.BooleanField(default=False, verbose_name='是否发布')
 
     def __str__(self):
         return self.headline

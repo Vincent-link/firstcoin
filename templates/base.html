@@ -9,17 +9,23 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+    <title>{% block title %}浪潮财经News{% endblock %}</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="/img/core-img/favicon.ico">
 
     <!-- Stylesheet -->
     {% load static %}
     <link rel="stylesheet" href="{% static 'news/style.css' %}">
 
     <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'news/js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'news/js/bootstrap/popper.min.js' %}"></script>
 
+    <script src="{% static 'news/js/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'news/js/plugins/plugins.js' %}"></script>
+    <script src="{% static 'news/js/active.js' %}"></script>
 </head>
 
 <body>
@@ -48,7 +54,7 @@
                     <!-- Copywrite Text -->
                     <div class="col-12 col-sm-6">
                         <p class="copywrite-text">
-                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="" target="_blank">浪潮财经News</a>
+                          Copyright &copy;2019 All rights reserved by <a href="/">浪潮财经News</a>
                         </p>
                     </div>
                     <div class="col-12 col-sm-6">
@@ -56,7 +62,7 @@
                             <ul>
                                 <!-- <li><a href="#">广告投放</a></li>
                                 <li><a href="#">媒体合作</a></li> -->
-                                <li><a href="#">关于我们</a></li>
+                                <li><a href="/about.html">关于我们</a></li>
                                 <!-- <li><a href="#">联系我们</a></li> -->
                                 <!-- <li><a href="#">Disclaimer</a></li>
                                 <li><a href="#">Privacy</a></li> -->
@@ -68,13 +74,7 @@
         </div>
     </footer>
     <!-- ##### Footer Area End ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="{% static 'news/js/jquery/jquery-2.2.4.min.js' %}"></script>
-    <script src="{% static 'news/js/bootstrap/popper.min.js' %}"></script>
 
-    <script src="{% static 'news/js/bootstrap/bootstrap.min.js' %}"></script>
-    <script src="{% static 'news/js/plugins/plugins.js' %}"></script>
-    <script src="{% static 'news/js/active.js' %}"></script>
 
 </body>
 

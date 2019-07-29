@@ -1,18 +1,50 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}浪潮财经News-打造区块链智能推荐系统{% endblock %}
 
 {% block content %}
+
+<script type="text/javascript">
+
+  var url = window.location.href;//获取当前页面链接
+  var cuts = url.split('/');//分隔，获取页码
+
+  if(cuts.length<5){
+    var cur_page_num=1;
+  }else{
+    var cur_page_num=parseInt(cuts[3]);
+  }
+
+  $(window).scroll(function () {
+     var scrollTop = $(this).scrollTop();//滚动条滚动的距离
+     var scrollHeight = $(document).height();//整个html页面高度
+     var windowHeight = $(this).height();//可视页面的高度
+
+     if (scrollTop + windowHeight == scrollHeight) {
+       var nexturl = cuts[0]+'//'+cuts[1]+cuts[2]+'/'+String(cur_page_num+1)+'/';//拼接下一页的url
+       cur_page_num += 1;//自加1
+
+       var newnode=document.createElement("div");
+       newnode.setAttribute("class", "all-posts-area");
+       newnode.setAttribute("id","new"+String(cur_page_num));
+       $(".col-lg-8").append(newnode);
+       $('#new'+String(cur_page_num)).load(nexturl + " .single-post-area");
+
+     }
+   });
+
+</script>
 
 <!-- ##### Vizew Post Area Start ##### -->
 <section class="vizew-post-area mb-50" style="min-height:870px;">
     <div class="container">
+      <br>
         <div class="row">
             <div class="col-12 col-md-7 col-lg-8">
+
                 <div class="all-posts-area">
                     <!-- Section Heading -->
-                    <br>
                     <!-- <div class="section-heading style-2">
 
                         <div class="line"></div>
@@ -27,7 +59,7 @@
                             <div class="col-12 col-lg-6">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail" style="">
-                                    <img width="350" src="{{ MEDIA_URL }}{{ article.cover }}" alt="">
+                                    <img width="" height="200" src="{{ MEDIA_URL }}{{ article.cover }}" alt="">
                                     <!-- Video Duration -->
                                 </div>
                             </div>
@@ -35,7 +67,7 @@
                                 <!-- Post Content -->
                                 <div class="post-content mt-0">
                                     <!-- <a href="#" class="post-cata cata-sm cata-success">比特币</a> -->
-                                    <a href="{% url 'news:detail' article.id %}" class="post-title mb-2">{{ article.headline }}</a>
+                                    <a href="{% url 'news:detail' article.id %}" class="post-title mb-2" target="_blank" >{{ article.headline }}</a>
                                     <div class="post-meta d-flex align-items-center mb-2">
                                         <a href="#" class="post-author">By {{ article.reporter }}</a>
                                         <i class="fa fa-circle" aria-hidden="true"></i>
@@ -59,8 +91,6 @@
             </div>
 
             <div class="col-12 col-md-5 col-lg-4">
-              <br>
-
                 <div class="sidebar-area">
                     <!-- 最新文章 -->
                     <!-- <div class="single-widget latest-video-widget mb-50">
@@ -100,7 +130,7 @@
                               <img src="{{ MEDIA_URL }}{{ article.cover }}" alt="">
                             </div>
                             <div class="post-content">
-                              <a href="{% url 'news:detail' article.id %}" class="post-title">{{ article.headline }}</a>
+                              <a href="{% url 'news:detail' article.id %}" class="post-title" target="_blank">{{ article.headline }}</a>
                                 <!-- <div class="post-meta d-flex justify-content-between">
                                     <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
                                     <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>

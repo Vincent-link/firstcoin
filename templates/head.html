@@ -8,15 +8,15 @@
                     <!-- Breaking News Widget -->
                     <div class="breaking-news-area d-flex align-items-center">
                         <div class="news-title" style="min-width: 45px;">
-                            <p>Top3:</p>
+                            <p>推好文</p>
                         </div>
                         <div id="breakingNewsTicker" class="ticker" style="padding-left:0px">
                             <ul>
-                              {% block content %}
+                              <!-- {% block content %}
                               {% for article in top3_articles %}
                               <li><a href="{% url 'news:detail' article.id %}">{{ article.headline }}</a></li>
                               {% endfor %}
-                              {% endblock %}
+                              {% endblock %} -->
 
                             </ul>
                         </div>
@@ -60,7 +60,7 @@
                 <!-- Menu -->
                 <nav class="classy-navbar justify-content-between" id="vizewNav">
                     <a href="/" class="logo" style="color: #ffffff;font-size: 20px;">
-                      区块链头条
+                      浪潮财经News
                       <!-- <img src="img/core-img/logo.png" alt=""> -->
                     </a>
 

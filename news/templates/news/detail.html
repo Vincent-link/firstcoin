@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}浪潮财经News-{{ article.headline }}{% endblock %}
+
 <h1>{{ article.title }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}

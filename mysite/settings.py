@@ -81,21 +81,21 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'firstcoin$firstcoin',
-        # 'USER':'firstcoin',
-        # 'PASSWORD':'bl199109',
-        # 'HOST':'firstcoin.mysql.pythonanywhere-services.com',
-        # 'PORT':3306,
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'firstcoin',
-        'USER':'root',
-        'PASSWORD':'',
-        'HOST':'127.0.0.1',
+        'NAME': 'firstcoin$firstcoin',
+        'USER':'firstcoin',
+        'PASSWORD':'bl199109',
+        'HOST':'firstcoin.mysql.pythonanywhere-services.com',
         'PORT':3306,
+
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'firstcoin',
+        # 'USER':'root',
+        # 'PASSWORD':'',
+        # 'HOST':'127.0.0.1',
+        # 'PORT':3306,
     }
 }
 
@@ -158,4 +158,4 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'  # 上传图片保存路径，如果没有图�
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# ALLOWED_HOSTS = ['firstcoin.pythonanywhere.com']
+ALLOWED_HOSTS = ['firstcoin.pythonanywhere.com']

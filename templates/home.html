@@ -59,7 +59,9 @@
                             <div class="col-12 col-lg-6">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail" style="">
-                                    <img width="" height="200" src="{{ MEDIA_URL }}{{ article.cover }}" alt="">
+                                    <a href="{% url 'news:detail' article.id %}" class="post-title mb-2" target="_blank" >
+                                      <img width="" height="200" src="{{ MEDIA_URL }}{{ article.cover }}" alt="">
+                                    </a>
                                     <!-- Video Duration -->
                                 </div>
                             </div>
@@ -116,8 +118,7 @@
 
                     </div> -->
                     <!-- ***** Single Widget ***** -->
-                    <div class="single-widget mb-50">
-                        <!-- Section Heading -->
+                    <!-- <div class="single-widget mb-50">
                         <div class="section-heading style-2 mb-30">
                             <h4>热门文章</h4>
                             <div class="line"></div>
@@ -131,18 +132,18 @@
                             </div>
                             <div class="post-content">
                               <a href="{% url 'news:detail' article.id %}" class="post-title" target="_blank">{{ article.headline }}</a>
-                                <!-- <div class="post-meta d-flex justify-content-between">
+                                <div class="post-meta d-flex justify-content-between">
                                     <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
                                     <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
                                     <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                         {% endfor %}
                         {% else %}
                           <p>No articles are available.</p>
                         {% endif %}
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

@@ -50,13 +50,13 @@ def detail(request, article_id):
         raise Http404("Article does not exist")
     return render(request, 'news/detail.html', {'article': article, 'recommend_articles': recommend_articles} )
 
-def recommendArticles(request, article):
+def recommendArticles(request, article, page=0):
     r_articles = Article.objects.filter(is_publish=True).order_by('-pub_date')[:100]
 
     r_articles_result = []
     num = 0
     for r_article in r_articles:
-        if num > 3:
+        if num > 31:
             break
         if r_article.headline != article.headline:
 
@@ -73,9 +73,11 @@ def recommendArticles(request, article):
                 num += 1
 
 
-    if len(r_articles_result) < 4:
-        r_articles = Article.objects.filter(is_publish=True).order_by('-pageviews')[:4-len(r_articles_result)]
+    if len(r_articles_result) < 32:
+        r_articles = Article.objects.filter(is_publish=True).order_by('-pageviews')[:32-len(r_articles_result)]
 
         r_articles_result.extend(r_articles)
+
+        r_articles_result = r_articles_result[int(page)*5:(int(page) + 1)*5]
 
     return r_articles_result
